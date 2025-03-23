@@ -1,9 +1,11 @@
-import { isWebp } from './modules'
+import 'bootstrap';
 
-window['FLS'] = true
-
-/* Проверка поддержки webp, добавление класса webp или no-webp для HTML
-! (i) необходимо для корректного отображения webp из css 
-*/
-isWebp()
+document.addEventListener("DOMContentLoaded", function () {
+  const currentUrl = window.location.pathname.replace('/', '');
+  document.querySelectorAll('header .nav-link').forEach(function (link) {
+    if (currentUrl.startsWith(link.getAttribute('href'))) {
+      link.classList.add("active");
+    }
+  });
+});
 

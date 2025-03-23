@@ -1,3 +1,4 @@
-@import "../node_modules/bootstrap/scss/bootstrap";
-@import './config/variables';
-@import './global';
+@use "node_modules/bootstrap/scss/bootstrap";
+@use './config/variables';
+@use './layout/footer';
+@use './global';
