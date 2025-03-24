@@ -1,4 +1,6 @@
 @use "node_modules/bootstrap/scss/bootstrap";
 @use './config/variables';
+@use './config/keyframes';
 @use './layout/footer';
 @use './global';
+@use './layout/main';
