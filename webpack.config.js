@@ -37,4 +37,5 @@ export const webpackConfig = (isMode) => ({
       },
     ],
   },
+  target: ['web', 'es5']
 })

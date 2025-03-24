@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function headerLinks() {
-  const currentUrl = window.location.pathname.split('/')[1];
+  const currentUrl = window.location.pathname.split('/').at(-1);
 
   if (!currentUrl) {
     document.querySelector('header .nav-link').classList.add("active");
@@ -13,7 +13,7 @@ function headerLinks() {
   }
 
   document.querySelectorAll('header .nav-link').forEach(function (link) {
-    if (currentUrl.startsWith(link.getAttribute('href'))) {
+    if (currentUrl === link.getAttribute('href')) {
       link.classList.add("active");
     }
   });
