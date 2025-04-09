@@ -1,55 +1,39 @@
 <section class="excel">
+  <style>
+    .h-100 {
+      height: auto !important;
+    }
+    img {
+      cursor: pointer;
+    }
+  </style>
   <div class="container">
     <h2 class="h1 text-center">
       MS Excel
     </h2>
 
     <p class="h4 fw-light text-center text-secondary pb-5">
-      На цій сторінці викладені роботи в MS Excel
+      На цій сторінці викладені скриншоти до робіт в MS Excel
     </p>
 
-    <h3 class="fw-light pb-2">Навчальні завдання</h3>
+    <div id="root"></div>
 
-    <ul class="list-group mb-4">
-      <li class="list-group-item">
-        <i class="fa-solid fa-file-excel"></i>
-        &nbsp;
-        <a href="static/excel/НПр-10.4-Возбранний.xlsx" class="text-decoration-none link-primary" download>
-          НПр-10.4
-        </a>
-      </li>
+    <script>
+      var root = document.getElementById('root');
+      var str = '';
+      for (let i = 1; i <= 25; i++) {
+        str += '<img src="static/excel/' + i + '.jpeg" class="d-block m-auto mb-4 img-thumbnail" alt="Excel">'
+      }
 
-      <li class="list-group-item">
-        <i class="fa-solid fa-file-excel"></i>
-        &nbsp;
-        <a href="static/excel/НПр-10.5-Возбранний.xlsx" class="text-decoration-none link-primary" download>
-          НПр-10.5
-        </a>
-      </li>
+      root.innerHTML = str;
 
-      <li class="list-group-item">
-        <i class="fa-solid fa-file-excel"></i>
-        &nbsp;
-        <a href="static/excel/НПр-10.6-Возбранний.xlsx" class="text-decoration-none link-primary" download>
-          НПр-10.6
-        </a>
-      </li>
+      function openImage(event) {
+        window.open(event.target.src);
+      }
 
-      <li class="list-group-item">
-        <i class="fa-solid fa-file-excel"></i>
-        &nbsp;
-        <a href="static/excel/НПр-10.7-Возбранний.xlsx" class="text-decoration-none link-primary" download>
-          НПр-10.7
-        </a>
-      </li>
-
-      <li class="list-group-item">
-        <i class="fa-solid fa-file-excel"></i>
-        &nbsp;
-        <a href="static/excel/НПр-10.8-Возбранний.xlsx" class="text-decoration-none link-primary" download>
-          НПр-10.8
-        </a>
-      </li>
-    </ul>
+      Array.prototype.forEach.call(document.querySelectorAll('section img'), function(item) {
+        item.addEventListener('click', openImage);
+      });
+    </script>
   </div>
 </section>

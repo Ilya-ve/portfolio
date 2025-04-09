@@ -1,4 +1,12 @@
 <section class="access">
+  <style>
+    .h-100 {
+      height: auto !important;
+    }
+    img {
+      cursor: pointer;
+    }
+  </style>
   <div class="container">
     <h2 class="h1 text-center">
       MS Access
@@ -19,5 +27,27 @@
         </a>
       </li>
     </ul>
+
+    <h3 class="fw-light pb-2">Скриншоти з MS Access</h3>
+
+    <div id="root"></div>
+
+    <script>
+      var root = document.getElementById('root');
+      var str = '';
+      for (let i = 1; i <= 15; i++) {
+        str += '<img src="static/access/' + i + '.jpeg" class="d-block m-auto mb-4 img-thumbnail" alt="Excel">'
+      }
+
+      root.innerHTML = str;
+
+      function openImage(event) {
+        window.open(event.target.src);
+      }
+
+      Array.prototype.forEach.call(document.querySelectorAll('section img'), function(item) {
+        item.addEventListener('click', openImage);
+      });
+    </script>
   </div>
 </section>
